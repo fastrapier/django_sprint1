@@ -1,4 +1,4 @@
-import django.http
+from django.http import Http404
 from django.shortcuts import render
 
 posts = [
@@ -57,8 +57,7 @@ def post_detail(request, post_id):
             return render(request, 'blog/detail.html', {
                 'post': post,
             })
-    return django.http.Http404
-
+    raise Http404('Post not found')
 
 def category_posts(request, category_slug):
     return render(request, 'blog/category.html', {
