@@ -59,6 +59,7 @@ def post_detail(request, post_id):
             })
     raise Http404('Post not found')
 
+
 def category_posts(request, category_slug):
     return render(request, 'blog/category.html', {
         'category': category_slug
