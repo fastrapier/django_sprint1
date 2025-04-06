@@ -52,11 +52,11 @@ def index(request):
 
 def post_detail(request, id):
     return render(request, 'blog/detail.html', {
-        'post' : posts[id],
+        'post': posts[id],
     })
 
 
 def category_posts(request, category_slug):
     return render(request, 'blog/category.html', {
-        'category' : category_slug
+        'category': category_slug
     })
