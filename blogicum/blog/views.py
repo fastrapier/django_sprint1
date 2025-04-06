@@ -46,7 +46,7 @@ posts = [
 
 def index(request):
     return render(request, 'blog/index.html', {
-        'posts': posts
+        'posts': posts[::-1]
     })
 
 
