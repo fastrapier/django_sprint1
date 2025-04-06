@@ -1,3 +1,4 @@
+import django.http
 from django.shortcuts import render
 
 posts = [
@@ -50,13 +51,13 @@ def index(request):
     })
 
 
-def post_detail(request, id):
+def post_detail(request, post_id):
     for post in posts:
-        if post['id'] == id:
+        if post['id'] == post_id:
             return render(request, 'blog/detail.html', {
                 'post': post,
             })
-    return render(request, 'blog/detail.html', {})
+    return django.http.Http404
 
 
 def category_posts(request, category_slug):
