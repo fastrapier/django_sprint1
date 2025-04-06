@@ -50,9 +50,9 @@ def index(request):
     })
 
 
-def post_detail(request, post_id):
+def post_detail(request, id):
     return render(request, 'blog/detail.html', {
-        'post' : posts[post_id],
+        'post' : posts[id],
     })
 
 
